@@ -88,4 +88,5 @@ for kk in range(IND_FIRST, IND_LAST):
     +'_peaksum'+str(int(peaksum[kk]))+'_ind'+str(int(det_start_ind[kk]))+'_time'\
     +str(det_times[kk])+'_'+ev_time.strftime('%Y-%m-%dT%H:%M:%S.%f')
     st_slice.write(os.path.join(output_eq_dir, out_file+'.mseed'), format='MSEED' )
-    #st_slice.plot(equal_scale=False, size=(out_width,out_height), outfile=out_file)
+    if plot:
+        st_slice.plot(equal_scale=False, size=(out_width,out_height), outfile=out_file)
