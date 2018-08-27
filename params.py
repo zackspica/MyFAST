@@ -138,10 +138,7 @@ def get_network_params():
 
 ####Fill params functions####
 def get_fp_files(sta, cha, folder, basename_only=True):
-    #print sta, cha, folder, ';'
-    g = glob.glob(folder+'*%s*'%(sta))
-    #g = glob.glob(folder+'*%s*%s*'%(sta, cha))
-    #print g
+    g = glob.glob(folder+'*%s*%s*'%(sta, cha))
     for f in g: 
         if f.endswith('.json'): 
             g.remove(f)
@@ -155,7 +152,6 @@ def get_fp_files(sta, cha, folder, basename_only=True):
 
 
 def get_starttime(sta, cha, folder):
-   # print sta, cha , folder
     files = get_fp_files(sta, cha, folder, basename_only=False)
     starttime = read(files[0],headonly=True)[0].stats.starttime
     return str(starttime)[:-5]
