@@ -113,7 +113,7 @@ def get_network_params():
     ####config.json####
     #network
     p['max_fp'] = get_max_fp()
-    p['dt_fp'] = 0.2#fp_lag*spec_lag
+    p['dt_fp'] = 1.2#fp_lag*spec_lag
     p['dgapL'] = 3
     p['dgapW'] = 3
     p['num_pass'] = 2
@@ -299,7 +299,7 @@ def create_json_network_params():
     p = get_network_params() 
     f = {'network':
             {'max_fp': p['max_fp'],
-            'dt_fp': int('%s'%p['dt_fp']),
+            'dt_fp': float('%s'%p['dt_fp']),
             'dgapL': int('%s'%p['dgapL']),
             'dgapW': int('%s'%p['dgapW']),
             'num_pass': int('%s'%p['num_pass']),
